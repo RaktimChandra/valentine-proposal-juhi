@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Forever Love - A Valentine's Proposal for Juhi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Aurora Background -->
+    <canvas id="aurora-canvas"></canvas>
+    
+    <!-- Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <!-- Floating Hearts Background -->
+    <div class="hearts-background">
+        <div class="heart">❤️</div>
+        <div class="heart">💕</div>
+        <div class="heart">💖</div>
+        <div class="heart">💗</div>
+        <div class="heart">💝</div>
+        <div class="heart">💘</div>
+        <div class="heart">💞</div>
+        <div class="heart">💓</div>
+    </div>
+    
+    <!-- Shooting Stars -->
+    <div class="shooting-stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player">
+        <button id="music-toggle" class="music-btn">
+            <i class="fas fa-music"></i>
+            <span>Play Music</span>
+        </button>
+        <audio id="background-music" loop>
+            <source src="music/music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">My Dearest Juhi</h1>
+            <div class="typewriter">
+                <p class="hero-subtitle">Every moment with you feels like a beautiful dream...</p>
+            </div>
+            <button class="cta-button" onclick="scrollToSection('journey')">
+                <span>Begin Our Journey</span>
+                <i class="fas fa-heart"></i>
+            </button>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Beautiful Framed Photo of Juhi -->
+    <section class="framed-photo-section">
+        <div class="container">
+            <div class="photo-frame">
+                <div class="frame-border">
+                    <img src="images/my_gf.jpg" alt="My Beautiful Juhi" class="framed-image">
+                    <div class="frame-caption">My Everything 💕</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section class="countdown-section" id="countdown">
+        <div class="container">
+            <h2 class="section-title">Time Since We Met</h2>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">0</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">0</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">0</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">0</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+            <p class="countdown-message">Every moment with you is precious!</p>
+        </div>
+    </section>
+
+    <!-- Our Love Story Timeline -->
+    <section class="journey" id="journey">
+        <div class="container">
+            <h2 class="section-title">Our Beautiful Journey Together</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>The Day We Met</h3>
+                        <p>The moment my eyes met yours, I knew something magical was about to begin. Your smile lit up my world in ways I never thought possible.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Falling in Love</h3>
+                        <p>Every conversation, every laugh, every shared moment made me fall deeper in love with the incredible person you are.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Realizing Forever</h3>
+                        <p>I wake up every morning grateful for your love, and I can't imagine a single day without you by my side.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Precious Memories</h2>
+            <div class="photo-grid">
+                <!-- First Date -->
+                <div class="photo-item" onclick="openPhotoModal(1)">
+                    <img src="images/first_date.jpg" alt="Our First Date">
+                    <div class="photo-overlay">
+                        <span>Our First Date 💕</span>
+                    </div>
+                </div>
+                <!-- Happy Times 1-10 -->
+                <div class="photo-item" onclick="openPhotoModal(2)">
+                    <img src="images/happy_times_1.jpg" alt="Happy Times">
+                    <div class="photo-overlay">
+                        <span>Happy Times 😊</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(3)">
+                    <img src="images/happy_times_2.jpg" alt="Happy Times">
+                    <div class="photo-overlay">
+                        <span>Smiles & Laughter</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(4)">
+                    <img src="images/happy_times_3.jpg" alt="Happy Times">
+                    <div class="photo-overlay">
+                        <span>Beautiful Moments</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(5)">
+                    <img src="images/happy_times_4.jpg" alt="Happy Times">
+                    <div class="photo-overlay">
+                        <span>Joy Together</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(6)">
+                    <img src="images/happy_times_5.jpg" alt="Happy Times">
+                    <div class="photo-overlay">
+                        <span>Making Memories</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(7)">
+                    <img src="images/happy_times_6.jpg" alt="Happy Times">
+                    <div class="photo-overlay">
+                        <span>Forever Smiling</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(8)">
+                    <img src="images/happy_times_7.jpg" alt="Happy Times">
+                    <div class="photo-overlay">
+                        <span>Happy Days</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(9)">
+                    <img src="images/happy_times_8.jpg" alt="Happy Times">
+                    <div class="photo-overlay">
+                        <span>Our Happiness</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(10)">
+                    <img src="images/happy_times_9.jpg" alt="Happy Times">
+                    <div class="photo-overlay">
+                        <span>Joyful Times</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(11)">
+                    <img src="images/happy_times_10.jpg" alt="Happy Times">
+                    <div class="photo-overlay">
+                        <span>Together Forever</span>
+                    </div>
+                </div>
+                <!-- Special Moments 1-11 -->
+                <div class="photo-item" onclick="openPhotoModal(12)">
+                    <img src="images/special_moments_1.jpg" alt="Special Moments">
+                    <div class="photo-overlay">
+                        <span>Special Moments ✨</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(13)">
+                    <img src="images/special_moments_2.jpg" alt="Special Moments">
+                    <div class="photo-overlay">
+                        <span>Precious Times</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(14)">
+                    <img src="images/special_moments_3.jpg" alt="Special Moments">
+                    <div class="photo-overlay">
+                        <span>Unforgettable</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(15)">
+                    <img src="images/special_moments_4.jpg" alt="Special Moments">
+                    <div class="photo-overlay">
+                        <span>Magical Times</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(16)">
+                    <img src="images/special_moments_5.jpg" alt="Special Moments">
+                    <div class="photo-overlay">
+                        <span>Our Story</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(17)">
+                    <img src="images/special_moments_6.jpg" alt="Special Moments">
+                    <div class="photo-overlay">
+                        <span>Beautiful Us</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(18)">
+                    <img src="images/special_moments_7.jpg" alt="Special Moments">
+                    <div class="photo-overlay">
+                        <span>Perfect Moments</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(19)">
+                    <img src="images/special_moments_8.jpg" alt="Special Moments">
+                    <div class="photo-overlay">
+                        <span>Love Captured</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(20)">
+                    <img src="images/special_moments_9.jpg" alt="Special Moments">
+                    <div class="photo-overlay">
+                        <span>Cherished Memories</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(21)">
+                    <img src="images/special_moments_10.jpg" alt="Special Moments">
+                    <div class="photo-overlay">
+                        <span>Eternal Love</span>
+                    </div>
+                </div>
+                <div class="photo-item" onclick="openPhotoModal(22)">
+                    <img src="images/special_moments_11.jpg" alt="Special Moments">
+                    <div class="photo-overlay">
+                        <span>Always & Forever 💖</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 100 Reasons I Love You -->
+    <section class="reasons-section" id="reasons">
+        <div class="container">
+            <h2 class="section-title">100 Reasons Why I Love You</h2>
+            <div class="reasons-container">
+                <button class="reveal-btn" onclick="revealReasons()">Click to Reveal ❤️</button>
+                <div class="reasons-grid" id="reasonsGrid" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Love Quiz -->
+    <section class="quiz-section" id="quiz">
+        <div class="container">
+            <h2 class="section-title">How Well Do We Know Each Other?</h2>
+            <div class="quiz-container">
+                <div class="quiz-card" id="quizCard">
+                    <h3 class="quiz-question" id="quizQuestion">Click Start to Begin!</h3>
+                    <div class="quiz-options" id="quizOptions"></div>
+                    <button class="quiz-btn" onclick="startQuiz()">Start Quiz</button>
+                </div>
+                <div class="quiz-score" id="quizScore" style="display: none;">
+                    <h3>Perfect Score! 💯</h3>
+                    <p>We're meant to be together!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Letters -->
+    <section class="love-letters" id="letters">
+        <div class="container">
+            <h2 class="section-title">Letters From My Heart</h2>
+            <div class="letters-grid">
+                <div class="letter-card">
+                    <h3>Why I Love You</h3>
+                    <p>My dearest Juhi, I love the way your eyes sparkle when you talk about your dreams. I love your kindness that touches everyone around you. I love your strength that inspires me to be better. But most of all, I love how you make me feel like the luckiest person in the world just by being yourself.</p>
+                </div>
+                <div class="letter-card">
+                    <h3>My Favorite Things</h3>
+                    <p>Your laugh that sounds like music to my ears, the way you care for others, your passion for life, your beautiful smile that can brighten any day, your wisdom that guides me, and your love that completes me.</p>
+                </div>
+                <div class="letter-card">
+                    <h3>Dreams of Our Future</h3>
+                    <p>I dream of waking up next to you every morning, building a life filled with love and laughter, supporting each other's dreams, growing old together, and creating countless more beautiful memories with you by my side.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Future Together -->
+    <section class="future-section" id="future">
+        <div class="container">
+            <h2 class="section-title">Our Dream Future</h2>
+            <div class="future-grid">
+                <div class="future-card" data-aos="zoom-in">
+                    <div class="future-icon">🏠</div>
+                    <h3>Our Dream Home</h3>
+                    <p>A cozy place filled with love and laughter</p>
+                </div>
+                <div class="future-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="future-icon">✈️</div>
+                    <h3>Travel the World</h3>
+                    <p>Exploring new places hand in hand</p>
+                </div>
+                <div class="future-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="future-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Build a Family</h3>
+                    <p>Creating our own little paradise</p>
+                </div>
+                <div class="future-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="future-icon">💼</div>
+                    <h3>Support Each Other</h3>
+                    <p>Growing together in every way</p>
+                </div>
+                <div class="future-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="future-icon">🎉</div>
+                    <h3>Create Memories</h3>
+                    <p>Every day a new adventure</p>
+                </div>
+                <div class="future-card" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="future-icon">👴👵</div>
+                    <h3>Grow Old Together</h3>
+                    <p>Forever and always, my love</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Big Proposal -->
+    <section class="proposal" id="proposal">
+        <div class="container">
+            <div class="proposal-content">
+                <h2 class="proposal-title">Juhi, Will You Be My Valentine?</h2>
+                <div class="proposal-text">
+                    <p>From the moment I met you, my life has been an incredible journey filled with love, laughter, and happiness.</p>
+                    <p>You are my best friend, my confidant, my partner in everything, and the love of my life.</p>
+                    <p>Every day with you feels like Valentine's Day, but today I want to make it official.</p>
+                    <p>Will you make this Valentine's Day the most special one by being mine forever?</p>
+                </div>
+                <div class="proposal-buttons">
+                    <button class="yes-btn" onclick="handleYes()">
+                        <i class="fas fa-heart"></i>
+                        <span>Yes, I'm Yours!</span>
+                    </button>
+                    <button class="no-btn" onclick="handleNo()">
+                        <span>Let Me Think...</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Celebration Section (Hidden until Yes) -->
+    <section class="celebration" id="celebration" style="display: none;">
+        <div class="container">
+            <div class="celebration-content">
+                <h2 class="celebration-title">💕 YOU'RE MY VALENTINE! 💕</h2>
+                <div class="celebration-message">
+                    <p>My beautiful Juhi, you've made me the happiest person in the world!</p>
+                    <p>Happy Valentine's Day to the love of my life!</p>
+                    <p>Here's to many more beautiful moments together!</p>
+                </div>
+                <div class="fireworks"></div>
+                <div class="confetti"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Modal -->
+    <div class="photo-modal" id="photoModal">
+        <div class="modal-content">
+            <span class="close" onclick="closePhotoModal()">&times;</span>
+            <div class="modal-photo">
+                <div class="photo-placeholder-large">
+                    <i class="fas fa-heart"></i>
+                    <p>Our precious memory together</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
